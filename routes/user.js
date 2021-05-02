@@ -1,5 +1,5 @@
 const router = require('express').Router
-const user = require()
+const user = router()
 
 //controller
 const eventController = require('../controller/user.ctrl')

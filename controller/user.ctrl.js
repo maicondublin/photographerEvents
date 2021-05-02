@@ -13,7 +13,7 @@ const update = async function( data ) {
 const remove = async function( data ) {
     return await user.findByIdAndDelete(data._id)
 }
-const loadByName = async function( token ) {
+const loadByName = async function( name ) {
     return await user.findOne({name})
 }
 const loadByToken = async function( token ) {

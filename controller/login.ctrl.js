@@ -19,4 +19,6 @@ const login = async function( data ) {
 
 }
 
-module.exports = login 
+module.exports = {
+    login 
+}

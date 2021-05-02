@@ -2,7 +2,7 @@ const router = require('express').Router
 const user = router()
 
 //controller
-const eventController = require('../controller/user.ctrl')
+const userController = require('../controller/user.ctrl')
 
 //rest API
 

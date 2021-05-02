@@ -6,7 +6,7 @@ const login = async function( data ) {
 
     const{name, password} = data
 
-    const user = await userController.loadByName({name})
+    const user = await userController.loadByName(name)
 
     if(!user) throw new Error('User not found!')
     if(!await bcrypt.compare(password, user.password)) throw new Error('Invalid password!')

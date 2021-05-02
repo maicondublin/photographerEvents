@@ -15,11 +15,14 @@ const eventsSchema = new mongoose.Schema({
     client_phone: {
         type: String
     },
+    client_email: {
+        type: String
+    },
     description: {
         type: String
     }
 })
 // create a 'table' on mongo 
-const events = mongoose.model('eventsSchema')
+const events = mongoose.model('events', eventsSchema)
 
 module.exports = events

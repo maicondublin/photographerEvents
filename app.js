@@ -1,12 +1,12 @@
 require('dotenv').config()
 const express = require('express')
-const bodyParcer = require('body-parser')
-// const bodyParser = require('body-parser')
+// const bodyParcer = require('body-parcer')
+ const bodyParcer = require('body-parser')
 const events = require('./routes/events')
 const app = express()
 
 app.use(bodyParcer.json())
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParcer.urlencoded({extended:false}))
 app.use(events)
 
 app.listen(3001, function(){

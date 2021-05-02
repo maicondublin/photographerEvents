@@ -3,7 +3,7 @@ const userController = require('../controller/user.ctrl')
 //inherit params from routes where its implemented 
 const validate = async function(req, res, next) {
 
-     const [bearer, token] =  req.headers.token.split('')
+     const [bearer, token] =  req.headers.authorization.split('')
 
      const user = await userController.loadByToken(token)
 

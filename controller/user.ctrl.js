@@ -13,10 +13,18 @@ const update = async function( data ) {
 const remove = async function( data ) {
     return await user.findByIdAndDelete(data._id)
 }
+const loadByName = async function( token ) {
+    return await user.findOne({name})
+}
+const loadByToken = async function( token ) {
+    return await user.findOne({ token }) 
 
+    }
 
 module.exports = {
     insert,
     update,
-    remove
+    remove,
+    loadByName,
+    loadByToken
 }

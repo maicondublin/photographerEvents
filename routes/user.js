@@ -1,6 +1,9 @@
 const router = require('express').Router
 const user = require()
 
+//controller
+const eventController = require('../controller/user.ctrl')
+
 //rest API
 
 //post => used to insert/ record  data
@@ -9,7 +12,7 @@ user.post('/user', async function(req, res){
         var newUser = await userController.insert(req.body)
         res.send(newUser)
     } catch (error) {
-        res.status(401).send({message:'Error to insert new event'})
+        res.status(401).send({message:'Error to insert new user'})
     }
 })
 

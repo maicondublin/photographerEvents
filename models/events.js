@@ -1,5 +1,6 @@
 const mongoose = require('../db/database')
 
+
 const eventsSchema = new mongoose.Schema({
     date_hour: {
         type: Date,
@@ -18,7 +19,7 @@ const eventsSchema = new mongoose.Schema({
         type: String
     }
 })
-
+// create a 'table' on mongo 
 const events = mongoose.model('eventsSchema')
 
 module.exports = events

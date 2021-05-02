@@ -11,8 +11,13 @@ const eventController = require('../controller/events.ctrl')
 //rest_API
 //get => used to select data 
 events.get('/events', authenticate, async function(req, res){
-    res.send('arrived at events')
-})
+    try {
+        var events = await eventController.loadAll()
+        res.send(events)
+    } catch (error) {
+        res.status(401).send({message:'Error to insert new event'})
+    }
+ })
 //post => used to insert data 
 events.post('/events', authenticate, async function(req, res){
    try {
@@ -24,11 +29,21 @@ events.post('/events', authenticate, async function(req, res){
 })
 //put => used to update data 
 events.put('/events', authenticate, async function(req, res){
-    res.send('arrived at events')
-})
+    try {
+        var newEvent = await eventController.update(req.body)
+        res.send(newEvent)
+    } catch (error) {
+        res.status(401).send({message:'Error to update event'})
+    }
+ })
 //delete => used to remove data
 events.delete('/events', authenticate, async function(req, res){
-    res.send('arrived at events')
-})
+    try {
+        var newEvent = await eventController.remove(req.body)
+        res.send(newEvent)
+    } catch (error) {
+        res.status(401).send({message:'Error to remove event'})
+    }
+ })
 
 module.exports = events

@@ -14,8 +14,8 @@ app.use(user)
 app.use(login)
 
 
-app.listen(3001, function(){
-    console.log('Listining to the port 3001!')
+app.listen(process.env.PORT || 3001, function(){
+    console.log('Listining to the port '+ (process.env.PORT || '3001'))
 })
 
 

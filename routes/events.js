@@ -37,9 +37,9 @@ events.put('/events', authenticate, async function(req, res){
     }
  })
 //delete => used to remove data
-events.delete('/events', authenticate, async function(req, res){
+events.delete('/events/:id', authenticate, async function(req, res){
     try {
-        var newEvent = await eventController.remove(req.body)
+        var newEvent = await eventController.remove({_id:req.params.id})
         res.send(newEvent)
     } catch (error) {
         res.status(401).send({message:'Error to remove event'})
